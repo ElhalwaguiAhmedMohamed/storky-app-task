@@ -1,0 +1,45 @@
+{
+  "name": "storky-app-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "test": "NODE_ENV=testing jest --verbose --forceExit --detectOpenHandles  --silent",
+    "dev": "nodemon --exec yarn restart",
+    "restart": "rimraf dist && yarn build && yarn start",
+    "start": "node dist/index.js",
+    "test-routes": "yarn test -t router",
+    "test-models": "yarn test -t model",
+    "test-controllers": "yarn test -t controllers",
+    "e2e": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-validator": "^6.14.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.2.10",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
+    "@babel/preset-env": "^7.16.11",
+    "babel-jest": "^27.5.1",
+    "cypress": "^9.5.4",
+    "jest": "^27.5.1",
+    "rimraf": "^3.0.2"
+  },
+  "jest": {
+    "verbose": true
+  }
+}
